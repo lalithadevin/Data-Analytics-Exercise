@@ -1,0 +1,4 @@
+Which brand saw the most dollars spent in the month of June?
+
+Select r2.BRAND_CODE, SUM(TOTAL_FINAL_PRICE) From receipts r1 JOIN receipt_items r2 ON r1.ID=ri.REWARDS_RECEIPT_ID
+WHERE MONTH(r.PURCHASE_DATE)=6 GROUP BY r2.BRAND_CODE ORDER BY SUM(TOTAL_FINAL_PRICE) DESC LIMIT 10;
